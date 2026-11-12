@@ -1,5 +1,7 @@
 # Tema 01 – Aplicație IoT cu taskuri periodice, sporadice și aperiodice
 
+**Autor soluție: Darius Borca** — [Implementare și rulare](SOLUTIE.md)
+
 **Tehnologii:** Java 17+, Maven, MQTT (Eclipse Paho), diagrame UML
 **Termen de predare:** _de stabilit_
 
@@ -106,7 +108,7 @@ mvn -q compile exec:java -Dexec.mainClass=ssatr.exemple.mqtt.MqttPublisherExampl
 Traficul se poate urmări și cu clientul `mosquitto_sub`, dacă este instalat:
 
 ```bash
-mosquitto_sub -h control.aut.utcluj.ro -p 11188 -t 'ssatr/popescu-ion/#' -v
+mosquitto_sub -h control.aut.utcluj.ro -p 11188 -t 'ssatr/borca-darius/#' -v
 ```
 
 ### `exemple/03-diagrame/`
@@ -142,7 +144,7 @@ mvn -q compile exec:java
 | Adresă | `tcp://control.aut.utcluj.ro:11188` |
 | Autentificare | nu este necesară |
 
-Brokerul este **partajat de toți studenții**. Toate topic-urile voastre încep cu `ssatr/<student>/`, unde `<student>` este numele vostru, fără spații sau diacritice (de exemplu `popescu-ion`). Îl setați o singură dată, în `Config.java`, identic în ambele aplicații.
+Brokerul este **partajat de toți studenții**. Toate topic-urile voastre încep cu `ssatr/<student>/`, unde `<student>` este numele vostru, fără spații sau diacritice (de exemplu `borca-darius`). Îl setați o singură dată, în `Config.java`, identic în ambele aplicații.
 
 ### Topic-uri și formatul mesajelor
 

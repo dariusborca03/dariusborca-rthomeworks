@@ -46,7 +46,7 @@ public class CommandConsole implements Runnable {
     private void sendCommand(String line) {
         try {
             // Împărțim linia în două: primul cuvânt este ID-ul, restul e comanda
-            String[] parts = line.split(" ", 2);
+            String[] parts = line.split("\\s+", 2);
 
             if (parts.length < 2 || parts[1].trim().isEmpty()) {
                 System.out.println("Eroare: Formatul comenzii este invalid. Ai uitat comanda.");
@@ -55,6 +55,7 @@ public class CommandConsole implements Runnable {
             }
 
             String deviceId = parts[0];
+            if (!deviceId.matches("[A-Za-z0-9_-]+")) throw new IllegalArgumentException("ID invalid");
             String command = parts[1].trim();
 
             // Publicăm comanda generând topicul dinamic

@@ -18,38 +18,39 @@ public class SporadicAlarmTask implements Runnable {
 
     private final String deviceId;
     private final MqttConnection mqtt;
-    private final BlockingQueue<Double> alarmEvents;
-    private PeriodicTelemetryTask periodic;
+    private final BlockingQueue<AlarmEvent> alarmEvents;
 
-    public SporadicAlarmTask(String deviceId, MqttConnection mqtt, BlockingQueue<Double> alarmEvents, PeriodicTelemetryTask periodic) {
+    public SporadicAlarmTask(String deviceId, MqttConnection mqtt, BlockingQueue<AlarmEvent> alarmEvents, PeriodicTelemetryTask periodic) {
         this.deviceId = deviceId;
         this.mqtt = mqtt;
         this.alarmEvents = alarmEvents;
-        this.periodic=periodic;
     }
 
     @Override
     public void run() {
         long lastReleaseTime = 0;
+        boolean accepted = false;
 
         try {
             while (true) {
                 // Task-ul adoarme așteptând un eveniment (blocant)
-                Double temp = alarmEvents.take();
+                AlarmEvent event = alarmEvents.take();
+                double temp = event.temperature();
                 long currentTime = System.currentTimeMillis();
 
                 // Verificăm dacă a trecut intervalul minim de protecție împotriva inundării brokerului
-                if (currentTime - lastReleaseTime < MIN_INTERARRIVAL_MS) {
+                if (accepted && event.arrivalNanos() - lastReleaseTime < MIN_INTERARRIVAL_MS * 1_000_000L) {
                     System.out.println("Alarma respinsa (inundare): " + temp);
                     continue; // respingem și ne întoarcem la așteptat
                 }
 
-                lastReleaseTime = currentTime;
+                lastReleaseTime = event.arrivalNanos();
+                accepted = true;
 
-                // Preluăm pragul curent din celălalt task (așa cum menționa cerința)
-                double currentThreshold = periodic.getThreshold();
+                // Folosim pragul capturat la sosire, nu setarea posibil schimbata intre timp.
+                double currentThreshold = event.threshold();
 
-                // Publicăm mesajul de alarmă cu pragul curent
+                // Publicam alarma cu temperatura si pragul aceluiasi eveniment.
                 String payload = String.format(Locale.US, "%s;%d;%.2f;%.2f", deviceId, currentTime, temp, currentThreshold);
                 mqtt.publish(Config.alarmTopic(deviceId), payload);
                 System.out.println("[ALARM START] Trimis: " + payload);

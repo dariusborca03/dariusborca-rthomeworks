@@ -36,19 +36,22 @@ public class MessageProcessor implements Runnable {
                 storage.append(kind, message);
 
                 try {
-                    String[] parts = message.split(";");
-                    if (parts.length < 3) throw new IllegalArgumentException("Format mesaj invalid");
+                    String[] parts = message.split(";", -1);
+                    if (parts.length != (kind.equals("alarm") ? 4 : 3)) throw new IllegalArgumentException("Format mesaj invalid");
 
                     String deviceId = parts[0];
+                    if (!deviceId.matches("[A-Za-z0-9_-]+")) throw new IllegalArgumentException();
                     long timestamp = Long.parseLong(parts[1]);
 
                     switch (kind) {
                         case "telemetry":
                             double temp = Double.parseDouble(parts[2]);
+                            if (!Double.isFinite(temp)) throw new IllegalArgumentException();
                             dashboard.updateTelemetry(deviceId, temp, timestamp);
                             break;
 
                         case "alarm":
+                            if (!Double.isFinite(Double.parseDouble(parts[2])) || !Double.isFinite(Double.parseDouble(parts[3]))) throw new IllegalArgumentException();
                             dashboard.updateAlarm(deviceId, timestamp);
                             // Alarmele trebuie afișate și direct în consolă
                             System.out.println("\n[ALARM ALERT] Device: " + deviceId + " | Date: " + message);

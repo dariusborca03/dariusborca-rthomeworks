@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850"><rect width="100%" height="100%" fill="white"/>
+<text x="40" y="56" text-anchor="start" font-family="Arial,sans-serif" font-size="28" fill="#172033">Tema 01 · Secvență: telemetrie și alarmă</text>
+<text x="40" y="89" text-anchor="start" font-family="Arial,sans-serif" font-size="17" fill="#64748b">Darius Borca · Exemplu: 30.00 °C &gt; pragul 28.00 °C · topic-uri sub ssatr/borca-darius/devices/device-1/</text>
+<rect x="5" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="100.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Periodic</text>
+<line x1="100" y1="190" x2="100" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="253" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="348.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Senzor</text>
+<line x1="348" y1="190" x2="348" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="501" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="596.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Coada alarme</text>
+<line x1="596" y1="190" x2="596" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="749" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="844.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Sporadic</text>
+<line x1="844" y1="190" x2="844" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="997" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="1092.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Broker MQTT</text>
+<line x1="1092" y1="190" x2="1092" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="1245" y="115" width="190" height="75" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+<text x="1340.0" y="160.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#172033">Business service</text>
+<line x1="1340" y1="190" x2="1340" y2="810" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="100" y1="245" x2="348" y2="245" stroke="#2563eb" stroke-width="2"/>
+<polygon points="348,245 337.1946347717679,250.21958640933477 337.1946347717679,239.78041359066523" fill="#2563eb"/>
+<text x="224.0" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">read()</text>
+<line x1="348" y1="315" x2="100" y2="315" stroke="#64748b" stroke-width="2" stroke-dasharray="6 5"/>
+<polygon points="100,315 110.80536522823212,309.78041359066526 110.80536522823212,320.21958640933474" fill="#64748b"/>
+<text x="224.0" y="287" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#64748b">30.00 °C</text>
+<line x1="100" y1="390" x2="1092" y2="390" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1092,390 1081.1946347717678,395.21958640933474 1081.1946347717678,384.78041359066526" fill="#2563eb"/>
+<text x="596.0" y="362" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">publish telemetry: device-1;timestamp;30.00</text>
+<line x1="1092" y1="450" x2="1340" y2="450" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1340,450 1329.1946347717678,455.21958640933474 1329.1946347717678,444.78041359066526" fill="#2563eb"/>
+<text x="1216.0" y="422" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">telemetry</text>
+<text x="1216.0" y="443" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">CSV + Dashboard</text>
+<line x1="100" y1="520" x2="596" y2="520" stroke="#2563eb" stroke-width="2"/>
+<polygon points="596,520 585.1946347717678,525.2195864093347 585.1946347717678,514.7804135906653" fill="#2563eb"/>
+<text x="348.0" y="492" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">offer(30.00, 28.00, arrivalNanos)</text>
+<line x1="596" y1="590" x2="844" y2="590" stroke="#2563eb" stroke-width="2"/>
+<polygon points="844,590 833.1946347717678,595.2195864093347 833.1946347717678,584.7804135906653" fill="#2563eb"/>
+<text x="720.0" y="562" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">take() → eveniment</text>
+<text x="844" y="635" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#15803d">verifică intervalul</text>
+<text x="844" y="655" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#15803d">acceptă prima alarmă</text>
+<line x1="844" y1="715" x2="1092" y2="715" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1092,715 1081.1946347717678,720.2195864093347 1081.1946347717678,709.7804135906653" fill="#2563eb"/>
+<text x="968.0" y="687" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">publish alarm</text>
+<text x="968.0" y="708" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">30.00;28.00</text>
+<line x1="1092" y1="775" x2="1340" y2="775" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1340,775 1329.1946347717678,780.2195864093347 1329.1946347717678,769.7804135906653" fill="#2563eb"/>
+<text x="1216.0" y="747" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">alarm → CSV</text>
+<text x="1216.0" y="768" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#2563eb">contor + afișare</text>
+</svg>

@@ -43,32 +43,35 @@ public class AperiodicCommandTask implements Runnable {
                 String commandStr = commands.take();
                 // Elimină eventualele spații în plus din stânga/dreapta și le desparte
                 String[] parts = commandStr.trim().split("\\s+");
-                String action = parts[0].toUpperCase();
+                String action = parts[0].toUpperCase(java.util.Locale.ROOT);
+                String normalized = String.join(" ", parts);
                 String responseText;
 
                 try {
                     switch (action) {
                         case "SET_INTERVAL":
-                            if (parts.length < 2) throw new IllegalArgumentException("Lipseste parametrul ms");
+                            if (parts.length != 2) throw new IllegalArgumentException("Lipseste parametrul ms");
                             long interval = Long.parseLong(parts[1]);
                             periodic.setPeriodMs(interval);
-                            responseText = "OK " + commandStr;
+                            responseText = "OK " + normalized;
                             break;
                         case "SET_THRESHOLD":
-                            if (parts.length < 2) throw new IllegalArgumentException("Lipseste valoarea");
+                            if (parts.length != 2) throw new IllegalArgumentException("Lipseste valoarea");
                             double threshold = Double.parseDouble(parts[1]);
                             periodic.setThreshold(threshold);
-                            responseText = "OK " + commandStr;
+                            responseText = "OK " + normalized;
                             break;
                         case "RESET":
+                            if (parts.length != 1) throw new IllegalArgumentException();
                             sensor.reset();
-                            responseText = "OK " + commandStr;
+                            responseText = "OK " + normalized;
                             break;
                         case "STATUS":
+                            if (parts.length != 1) throw new IllegalArgumentException();
                             responseText = "STATUS interval=" + periodic.getPeriodMs() + " threshold=" + periodic.getThreshold();
                             break;
                         default:
-                            responseText = "ERROR Comanda necunoscuta: " + action;
+                            responseText = "ERROR Comanda necunoscuta";
                             break;
                     }
                 } catch (Exception e) {

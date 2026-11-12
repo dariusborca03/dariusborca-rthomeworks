@@ -29,8 +29,8 @@ public class DeviceSimulator {
         mqtt.connect();
 
         // cozile prin care comunică taskurile
-        BlockingQueue<Double> alarmEvents = new LinkedBlockingQueue<>();
-        BlockingQueue<String> commands = new LinkedBlockingQueue<>();
+        BlockingQueue<AlarmEvent> alarmEvents = new LinkedBlockingQueue<>(256);
+        BlockingQueue<String> commands = new LinkedBlockingQueue<>(256);
 
         // comenzile primite pe MQTT ajung direct în coada commands
         mqtt.subscribe(Config.commandTopic(deviceId), commands);

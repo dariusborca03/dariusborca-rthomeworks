@@ -16,14 +16,14 @@ public class PeriodicTelemetryTask implements Runnable {
     private final String deviceId;
     private final TemperatureSensor sensor;
     private final MqttConnection mqtt;
-    private final BlockingQueue<Double> alarmEvents;
+    private final BlockingQueue<AlarmEvent> alarmEvents;
 
     // volatile: sunt citite aici, dar modificate de taskul aperiodic (alt thread)
     private volatile long periodMs = 2000;
     private volatile double threshold = 28.0;
 
     public PeriodicTelemetryTask(String deviceId, TemperatureSensor sensor, MqttConnection mqtt,
-                                 BlockingQueue<Double> alarmEvents) {
+                                 BlockingQueue<AlarmEvent> alarmEvents) {
         this.deviceId = deviceId;
         this.sensor = sensor;
         this.mqtt = mqtt;
@@ -43,6 +43,8 @@ public class PeriodicTelemetryTask implements Runnable {
 
                 // Citim temperatura de la senzor
                 double temp = sensor.read();
+                double limit = threshold;
+                long arrival = System.nanoTime();
                 long timestamp = System.currentTimeMillis();
 
                 // Publicăm cu Locale.US pentru a forța punctul zecimal
@@ -50,8 +52,8 @@ public class PeriodicTelemetryTask implements Runnable {
                 mqtt.publish(Config.telemetryTopic(deviceId), payload);
 
                 // Dacă temperatura e peste prag, declanșăm evenimentul în coadă
-                if (temp > this.threshold) {
-                    alarmEvents.offer(temp);
+                if (temp > limit) {
+                    alarmEvents.offer(new AlarmEvent(temp, limit, arrival));
                 }
 
                 // Așteptare absolută: dormim doar cât a mai rămas până la următoarea grilă
@@ -63,8 +65,10 @@ public class PeriodicTelemetryTask implements Runnable {
                     int sleepNs = (int) (waitTimeNs % 1_000_000L);
                     Thread.sleep(sleepMs, sleepNs);
                 } else {
-                    // Dacă s-a depășit deja timpul (delay de procesare imens), realiniem grila
-                    nextActivationTime = currentTime;
+                    // Dacă s-a depășit deja timpul (delay de procesare imens), sarim eliberarile ratate, pastrand grila initiala
+                    nextActivationTime += ((currentTime - nextActivationTime) / (currentPeriodMs * 1_000_000L) + 1) * currentPeriodMs * 1_000_000L;
+                    long remaining = nextActivationTime - System.nanoTime();
+                    if (remaining > 0) java.util.concurrent.TimeUnit.NANOSECONDS.sleep(remaining);
                 }
             }
         } catch (InterruptedException e) {
@@ -74,10 +78,12 @@ public class PeriodicTelemetryTask implements Runnable {
     }
 
     public void setPeriodMs(long periodMs) {
+        if (periodMs < 50 || periodMs > 3600000) throw new IllegalArgumentException("interval 50..3600000 ms");
         this.periodMs = periodMs;
     }
 
     public void setThreshold(double threshold) {
+        if (!Double.isFinite(threshold)) throw new IllegalArgumentException("prag finit");
         this.threshold = threshold;
     }
 

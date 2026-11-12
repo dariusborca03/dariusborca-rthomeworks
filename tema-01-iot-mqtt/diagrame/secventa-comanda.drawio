@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Darius Borca" version="24.7.17">
+  <diagram name="Tema 01 · Secvență: SET_INTERVAL și confirmare" id="secventa-comanda">
+    <mxGraphModel dx="1440" dy="850" grid="1" gridSize="10" page="1" pageWidth="1440" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Tema 01 · Secvență: SET_INTERVAL și confirmare" style="text;whiteSpace=wrap;html=0;align=left;verticalAlign=top;fontSize=28;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="40" y="28" width="1000" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Darius Borca · Comanda: device-1 SET_INTERVAL 1000 · Callback-ul MQTT pune textul în coadă, fără execuție" style="text;whiteSpace=wrap;html=0;align=left;verticalAlign=top;fontSize=17;fontColor=#64748b;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="1000" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="5" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Operator" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="-400.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="190" as="sourcePoint" />
+            <mxPoint x="100" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="253" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Business service" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="-152.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="190" as="sourcePoint" />
+            <mxPoint x="348" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="501" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Broker MQTT" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="96.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="190" as="sourcePoint" />
+            <mxPoint x="596" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="749" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Coada comenzi" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="344.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="844" y="190" as="sourcePoint" />
+            <mxPoint x="844" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="997" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Aperiodic" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="592.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="190" as="sourcePoint" />
+            <mxPoint x="1092" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Periodic" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="840.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="190" as="sourcePoint" />
+            <mxPoint x="1340" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="245" as="sourcePoint" />
+            <mxPoint x="348" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" value="device-1&#10;SET_INTERVAL 1000" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="-276.0" y="201" width="1000" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="330" as="sourcePoint" />
+            <mxPoint x="596" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="publish commands&#10;SET_INTERVAL 1000" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="-28.0" y="286" width="1000" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="420" as="sourcePoint" />
+            <mxPoint x="844" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="callback → offer(text)" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="220.0" y="376" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="844" y="505" as="sourcePoint" />
+            <mxPoint x="1092" y="505" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="take()" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="468.0" y="461" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="590" as="sourcePoint" />
+            <mxPoint x="1340" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="setPeriodMs(1000)&#10;validare + scriere volatile" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="716.0" y="546" width="1000" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="680" as="sourcePoint" />
+            <mxPoint x="596" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="publish status: device-1;timestamp;OK SET_INTERVAL 1000" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="344.0" y="636" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="770" as="sourcePoint" />
+            <mxPoint x="348" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="35" value="status → MessageProcessor → CSV + afișare" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="-28.0" y="726" width="1000" height="31" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

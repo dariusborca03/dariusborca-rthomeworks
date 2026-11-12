@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="Darius Borca" version="24.7.17">
+  <diagram name="Tema 01 · Secvență: telemetrie și alarmă" id="secventa-alarma">
+    <mxGraphModel dx="1440" dy="850" grid="1" gridSize="10" page="1" pageWidth="1440" pageHeight="850">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Tema 01 · Secvență: telemetrie și alarmă" style="text;whiteSpace=wrap;html=0;align=left;verticalAlign=top;fontSize=28;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="40" y="28" width="1000" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="Darius Borca · Exemplu: 30.00 °C &gt; pragul 28.00 °C · topic-uri sub ssatr/borca-darius/devices/device-1/" style="text;whiteSpace=wrap;html=0;align=left;verticalAlign=top;fontSize=17;fontColor=#64748b;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="1000" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="5" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="Periodic" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="-400.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="190" as="sourcePoint" />
+            <mxPoint x="100" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="253" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Senzor" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="-152.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="190" as="sourcePoint" />
+            <mxPoint x="348" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="10" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="501" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="Coada alarme" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="96.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="190" as="sourcePoint" />
+            <mxPoint x="596" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="13" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="749" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="Sporadic" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="344.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="844" y="190" as="sourcePoint" />
+            <mxPoint x="844" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="16" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="997" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="Broker MQTT" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="592.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="190" as="sourcePoint" />
+            <mxPoint x="1092" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="19" value="" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#eff6ff;strokeColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="1245" y="115" width="190" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Business service" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=18;fontColor=#172033;" vertex="1" parent="1">
+          <mxGeometry x="840.0" y="142.5" width="1000" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="" style="endArrow=none;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="190" as="sourcePoint" />
+            <mxPoint x="1340" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="22" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="245" as="sourcePoint" />
+            <mxPoint x="348" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="23" value="read()" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="-276.0" y="201" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="24" value="" style="endArrow=block;strokeColor=#64748b;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="315" as="sourcePoint" />
+            <mxPoint x="100" y="315" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="25" value="30.00 °C" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#64748b;" vertex="1" parent="1">
+          <mxGeometry x="-276.0" y="271" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="390" as="sourcePoint" />
+            <mxPoint x="1092" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="27" value="publish telemetry: device-1;timestamp;30.00" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="96.0" y="346" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="450" as="sourcePoint" />
+            <mxPoint x="1340" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="29" value="telemetry&#10;CSV + Dashboard" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="716.0" y="406" width="1000" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="30" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="520" as="sourcePoint" />
+            <mxPoint x="596" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="31" value="offer(30.00, 28.00, arrivalNanos)" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="-152.0" y="476" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="596" y="590" as="sourcePoint" />
+            <mxPoint x="844" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="33" value="take() → eveniment" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="220.0" y="546" width="1000" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="34" value="verifică intervalul&#10;acceptă prima alarmă" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=15;fontColor=#15803d;" vertex="1" parent="1">
+          <mxGeometry x="344" y="620" width="1000" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="844" y="715" as="sourcePoint" />
+            <mxPoint x="1092" y="715" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="36" value="publish alarm&#10;30.00;28.00" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="468.0" y="671" width="1000" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="endArrow=block;strokeColor=#2563eb;dashed=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1092" y="775" as="sourcePoint" />
+            <mxPoint x="1340" y="775" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="38" value="alarm → CSV&#10;contor + afișare" style="text;whiteSpace=wrap;html=0;align=center;verticalAlign=top;fontSize=16;fontColor=#2563eb;" vertex="1" parent="1">
+          <mxGeometry x="716.0" y="731" width="1000" height="52" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

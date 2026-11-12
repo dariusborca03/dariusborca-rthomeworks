@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="850" viewBox="0 0 1440 850"><rect width="100%" height="100%" fill="white"/>
+<text x="40" y="56" text-anchor="start" font-family="Arial,sans-serif" font-size="28" fill="#172033">Tema 01 · Diagrama de timp (0–10 s)</text>
+<text x="40" y="89" text-anchor="start" font-family="Arial,sans-serif" font-size="17" fill="#64748b">Darius Borca · Scenariu ilustrativ, nu măsurători · T periodic = 2 s · Interval minim sporadic = 5 s</text>
+<line x1="270" y1="155" x2="270" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="270" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">0 s</text>
+<line x1="378" y1="155" x2="378" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="378" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">1 s</text>
+<line x1="486" y1="155" x2="486" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="486" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">2 s</text>
+<line x1="594" y1="155" x2="594" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="594" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">3 s</text>
+<line x1="702" y1="155" x2="702" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="702" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">4 s</text>
+<line x1="810" y1="155" x2="810" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="810" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">5 s</text>
+<line x1="918" y1="155" x2="918" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="918" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">6 s</text>
+<line x1="1026" y1="155" x2="1026" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1026" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">7 s</text>
+<line x1="1134" y1="155" x2="1134" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1134" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">8 s</text>
+<line x1="1242" y1="155" x2="1242" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1242" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">9 s</text>
+<line x1="1350" y1="155" x2="1350" y2="675" stroke="#e2e8f0" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="1350" y="142" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#172033">10 s</text>
+<text x="40" y="260" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">Periodic</text>
+<text x="40" y="285" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">T = 2000 ms</text>
+<line x1="270" y1="275" x2="1350" y2="275" stroke="#64748b" stroke-width="2"/>
+<polygon points="1350,275 1339.1946347717678,280.21958640933474 1339.1946347717678,269.78041359066526" fill="#64748b"/>
+<text x="40" y="425" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">Sporadic</text>
+<text x="40" y="450" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">alarme</text>
+<line x1="270" y1="440" x2="1350" y2="440" stroke="#64748b" stroke-width="2"/>
+<polygon points="1350,440 1339.1946347717678,445.21958640933474 1339.1946347717678,434.78041359066526" fill="#64748b"/>
+<text x="40" y="595" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">Aperiodic</text>
+<text x="40" y="620" text-anchor="start" font-family="Arial,sans-serif" font-size="20" fill="#172033">comenzi</text>
+<line x1="270" y1="610" x2="1350" y2="610" stroke="#64748b" stroke-width="2"/>
+<polygon points="1350,610 1339.1946347717678,615.2195864093347 1339.1946347717678,604.7804135906653" fill="#64748b"/>
+<line x1="270" y1="285" x2="270" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="270,235 275.21958640933474,245.80536522823212 264.78041359066526,245.80536522823212" fill="#2563eb"/>
+<rect x="272" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="270" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r0</text>
+<line x1="486" y1="285" x2="486" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="486,235 491.21958640933474,245.80536522823212 480.78041359066526,245.80536522823212" fill="#2563eb"/>
+<rect x="488" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="486" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r1</text>
+<line x1="702" y1="285" x2="702" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="702,235 707.2195864093347,245.80536522823212 696.7804135906653,245.80536522823212" fill="#2563eb"/>
+<rect x="704" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="702" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r2</text>
+<line x1="918" y1="285" x2="918" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="918,235 923.2195864093347,245.80536522823212 912.7804135906653,245.80536522823212" fill="#2563eb"/>
+<rect x="920" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="918" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r3</text>
+<line x1="1134" y1="285" x2="1134" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1134,235 1139.2195864093349,245.80536522823212 1128.7804135906651,245.80536522823212" fill="#2563eb"/>
+<rect x="1136" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="1134" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r4</text>
+<line x1="1350" y1="285" x2="1350" y2="235" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1350,235 1355.2195864093349,245.80536522823212 1344.7804135906651,245.80536522823212" fill="#2563eb"/>
+<rect x="1352" y="245" width="24" height="30" rx="8" fill="#93c5fd" stroke="#2563eb" stroke-width="2"/>
+<text x="1350" y="217" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">r5</text>
+<line x1="496.8" y1="460" x2="496.8" y2="405" stroke="#15803d" stroke-width="2"/>
+<polygon points="496.8,405 502.01958640933475,415.8053652282321 491.5804135906653,415.8053652282321" fill="#15803d"/>
+<rect x="498.8" y="410" width="26" height="30" rx="8" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+<text x="496.8" y="496" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#15803d">acceptată</text>
+<text x="496.8" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#15803d">2.1 s</text>
+<line x1="712.8" y1="460" x2="712.8" y2="405" stroke="#b91c1c" stroke-width="2"/>
+<polygon points="712.8,405 718.0195864093347,415.8053652282321 707.5804135906652,415.8053652282321" fill="#b91c1c"/>
+<text x="712.8" y="432" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" fill="#b91c1c">×</text>
+<text x="712.8" y="496" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#b91c1c">respinsă</text>
+<text x="712.8" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#b91c1c">4.1 s</text>
+<line x1="928.8" y1="460" x2="928.8" y2="405" stroke="#b91c1c" stroke-width="2"/>
+<polygon points="928.8,405 934.0195864093347,415.8053652282321 923.5804135906652,415.8053652282321" fill="#b91c1c"/>
+<text x="928.8" y="432" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" fill="#b91c1c">×</text>
+<text x="928.8" y="496" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#b91c1c">respinsă</text>
+<text x="928.8" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#b91c1c">6.1 s</text>
+<line x1="1144.8" y1="460" x2="1144.8" y2="405" stroke="#15803d" stroke-width="2"/>
+<polygon points="1144.8,405 1150.0195864093348,415.8053652282321 1139.580413590665,415.8053652282321" fill="#15803d"/>
+<rect x="1146.8" y="410" width="26" height="30" rx="8" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/>
+<text x="1144.8" y="496" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#15803d">acceptată</text>
+<text x="1144.8" y="517" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#15803d">8.1 s</text>
+<line x1="1026" y1="630" x2="1026" y2="570" stroke="#2563eb" stroke-width="2"/>
+<polygon points="1026,570 1031.2195864093349,580.8053652282322 1020.7804135906653,580.8053652282322" fill="#2563eb"/>
+<rect x="1028" y="580" width="35" height="30" rx="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+<text x="1026" y="662" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#2563eb">STATUS la 7 s</text>
+<text x="40" y="733" text-anchor="start" font-family="Arial,sans-serif" font-size="18" fill="#172033">Legendă: ↑ eliberare / sosire; dreptunghi = job; × = eveniment respins înainte de publicarea alarmei.</text>
+<text x="40" y="771" text-anchor="start" font-family="Arial,sans-serif" font-size="18" fill="#64748b">Alarme la 2.1 s și 8.1 s: Δ = 6 s ≥ 5 s. Cele de la 4.1 s și 6.1 s sunt prea apropiate de ultima acceptată.</text>
+<text x="40" y="808" text-anchor="start" font-family="Arial,sans-serif" font-size="17" fill="#64748b">Lățimile joburilor sunt simbolice. Thread-urile Java și MQTT nu oferă garanții hard real-time.</text>
+</svg>

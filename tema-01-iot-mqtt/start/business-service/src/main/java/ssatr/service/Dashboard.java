@@ -17,6 +17,7 @@ public class Dashboard {
         String deviceId;
         double lastTemp = 0.0;
         long lastMessageTime = 0;
+        long lastTelemetryTime = Long.MIN_VALUE;
         int alarmCount = 0;
 
         DeviceState(String deviceId) {
@@ -27,8 +28,11 @@ public class Dashboard {
     public void updateTelemetry(String deviceId, double temp, long timestamp) {
         DeviceState state = devices.computeIfAbsent(deviceId, DeviceState::new);
         synchronized (state) {
-            state.lastTemp = temp;
-            state.lastMessageTime = timestamp;
+            if (timestamp >= state.lastTelemetryTime) {
+                state.lastTemp = temp;
+                state.lastTelemetryTime = timestamp;
+            }
+            state.lastMessageTime = Math.max(state.lastMessageTime, timestamp);
         }
     }
 
@@ -36,14 +40,14 @@ public class Dashboard {
         DeviceState state = devices.computeIfAbsent(deviceId, DeviceState::new);
         synchronized (state) {
             state.alarmCount++;
-            state.lastMessageTime = timestamp;
+            state.lastMessageTime = Math.max(state.lastMessageTime, timestamp);
         }
     }
 
     public void updateStatus(String deviceId, long timestamp) {
         DeviceState state = devices.computeIfAbsent(deviceId, DeviceState::new);
         synchronized (state) {
-            state.lastMessageTime = timestamp;
+            state.lastMessageTime = Math.max(state.lastMessageTime, timestamp);
         }
     }
 

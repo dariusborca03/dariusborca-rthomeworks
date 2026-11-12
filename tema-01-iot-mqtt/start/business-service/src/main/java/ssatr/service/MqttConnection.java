@@ -1,60 +1,52 @@
 package ssatr.service;
 
+import java.nio.charset.StandardCharsets;
+import java.util.UUID;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.BlockingQueue;
-
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
-
-/**
- * Conexiunea la brokerul MQTT (clasă gata implementată, nu trebuie modificată).
- *
- * Mesajele primite nu sunt prelucrate pe thread-ul bibliotecii Paho, ci sunt
- * puse într-o coadă (BlockingQueue). Aplicația le preia din coadă pe
- * thread-urile ei, în ritmul ei.
- */
+/** Darius Borca: callback scurt, UTF-8 si reabonare dupa reconectare. */
 public class MqttConnection {
-
     private final MqttClient client;
-
-    public MqttConnection(String clientName) throws MqttException {
-        // ID-ul clientului trebuie să fie unic pe broker
-        String clientId = clientName + "-" + System.currentTimeMillis();
-        client = new MqttClient(Config.BROKER, clientId, new MemoryPersistence());
+    private final Map<String, BlockingQueue<String>> subscriptions = new ConcurrentHashMap<>();
+    public MqttConnection(String name) throws MqttException {
+        client = new MqttClient(Config.BROKER, name + "-" + UUID.randomUUID(), new MemoryPersistence());
+        client.setCallback(new MqttCallbackExtended() {
+            public void connectComplete(boolean reconnect, String uri) {
+                if (reconnect) subscriptions.forEach((topic, inbox) -> {
+                    try { subscribe(topic, inbox); }
+                    catch (MqttException e) { System.err.println("Reabonare esuata: " + topic); }
+                });
+            }
+            public void connectionLost(Throwable cause) { System.err.println("MQTT deconectat; reincercare automata"); }
+            public void messageArrived(String topic, MqttMessage message) {}
+            public void deliveryComplete(IMqttDeliveryToken token) {}
+        });
     }
-
     public void connect() throws MqttException {
         MqttConnectOptions options = new MqttConnectOptions();
-        options.setCleanSession(true);
-        options.setAutomaticReconnect(true);
+        options.setCleanSession(true); options.setAutomaticReconnect(true); options.setConnectionTimeout(10);
+        client.setTimeToWait(3000);
         client.connect(options);
         System.out.println("Conectat la " + Config.BROKER);
     }
-
-    /** Publică un mesaj text (QoS 1). */
     public void publish(String topic, String text) {
         try {
-            MqttMessage message = new MqttMessage(text.getBytes());
-            message.setQos(1);
-            client.publish(topic, message);
-        } catch (MqttException e) {
-            System.out.println("Eroare la publicare pe " + topic + ": " + e.getMessage());
-        }
+            MqttMessage message = new MqttMessage(text.getBytes(StandardCharsets.UTF_8));
+            message.setQos(1); client.publish(topic, message);
+        } catch (MqttException e) { System.err.println("Publicare esuata: " + topic + " / " + e.getMessage()); }
     }
-
-    /**
-     * Se abonează la un topic (poate conține wildcard-urile + și #).
-     * Textul fiecărui mesaj primit este pus în coada inbox.
-     */
-    public void subscribe(String topicFilter, BlockingQueue<String> inbox) throws MqttException {
-        client.subscribe(topicFilter, 1, (topic, message) -> inbox.put(new String(message.getPayload())));
-        System.out.println("Abonat la " + topicFilter);
+    public void subscribe(String topic, BlockingQueue<String> inbox) throws MqttException {
+        subscriptions.put(topic, inbox);
+        client.subscribe(topic, 1, (receivedTopic, message) -> {
+            if (!inbox.offer(new String(message.getPayload(), StandardCharsets.UTF_8)))
+                System.err.println("Coada plina: " + receivedTopic);
+        });
     }
-
     public void disconnect() throws MqttException {
-        client.disconnect();
+        if (client.isConnected()) client.disconnect();
         client.close();
     }
 }
