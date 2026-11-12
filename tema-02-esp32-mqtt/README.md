@@ -1,5 +1,7 @@
 # Tema 02 – Device IoT pe ESP32-C3 cu taskuri FreeRTOS
 
+**Autor soluție: Darius Borca** — [Implementare și rulare](SOLUTIE.md)
+
 **Tehnologii:** ESP32-C3 Super Mini, Arduino IDE, FreeRTOS, MQTT, Java 17+ (business-service)
 **Termen de predare:** _de stabilit_
 
