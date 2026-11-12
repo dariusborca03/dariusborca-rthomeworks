@@ -1,5 +1,5 @@
 // Conexiunea plăcii: Wi-Fi, ora exactă (SNTP) și clientul MQTT.
-// Gata implementată (connection.cpp), nu trebuie modificată: este
+// Implementata in connection.cpp: este
 // aceeași ca în tema 02 (echivalentul clasei MqttConnection din tema 01).
 //
 // Ordinea apelurilor, în setup():
@@ -8,13 +8,13 @@
 //   time_sync();      // după Wi-Fi: ora exactă, pentru epoch_ms()
 //   ...               // mutexul și coada voastră (TODO 0 a)
 //   mqtt_start();     // după cozi: comenzile primite ajung în command_received()
-//   ...               // taskurile voastre (TODO 0 b): publică prin mqtt_publish()
+//   ...               // taskurile aplicatiei: publică prin mqtt_publish()
 
 #pragma once
 
 #include <Arduino.h>
 
-// lungimea maximă a unei comenzi primite, cu tot cu '\0'; textul mai lung este trunchiat
+// lungimea maximă a unei comenzi primite, cu tot cu '\0'; mesajele mai lungi sunt respinse
 const size_t COMMAND_MAX_LEN = 64;
 
 // Conectează placa la rețeaua WIFI_SSID din config.h. Blochează până la

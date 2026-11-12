@@ -92,7 +92,12 @@ static void on_mqtt_event(void* handler_arg, esp_event_base_t base, int32_t even
         Serial.println("[mqtt] deconectat, clientul reîncearcă singur");
     } else if (event_id == MQTT_EVENT_DATA) {
         // ev->data NU se termină cu '\0': copiem ev->data_len octeți
-        // (trunchiat la COMMAND_MAX_LEN - 1) și adăugăm '\0'.
+        // Daca mesajul incape integral, adaugam '\0'.
+        if (ev->current_data_offset != 0) return;
+        if (ev->total_data_len >= (int)COMMAND_MAX_LEN || ev->data_len != ev->total_data_len) {
+            command_received("INVALID");
+            return;
+        }
         char text[COMMAND_MAX_LEN];
         int n = ev->data_len;
         if (n > (int)COMMAND_MAX_LEN - 1) n = COMMAND_MAX_LEN - 1;
@@ -128,9 +133,10 @@ bool mqtt_publish(const char* kind, const char* text) {
     }
     char topic[80];
     make_topic(topic, sizeof(topic), kind);
-    // lungime 0: clientul folosește strlen(text); QoS 1, fără retain.
+    // Enqueue: reteaua este tratata de taskul MQTT, nu de taskul periodic.
+    // lungime 0: clientul foloseste strlen(text); QoS 1, fara retain.
     // Dacă placa nu este conectată încă, mesajul așteaptă în clientul MQTT.
-    int id = esp_mqtt_client_publish(g_client, topic, text, 0, 1, 0);
+    int id = esp_mqtt_client_enqueue(g_client, topic, text, 0, 1, 0, true);
     if (id < 0) {
         Serial.printf("[mqtt] publicarea pe %s a eșuat\n", topic);
         return false;

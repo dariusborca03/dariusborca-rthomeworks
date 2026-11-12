@@ -139,7 +139,7 @@ public class WebDashboard {
     }
 
     /**
-     * GET /api/events (pe server: /api/events?student=popescu-ion): fluxul de
+     * GET /api/events (pe server: /api/events?student=borca-darius): fluxul de
      * mesaje către pagină (Server-Sent Events); conexiunea rămâne deschisă.
      */
     private void serveEvents(HttpExchange ex) throws IOException {

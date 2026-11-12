@@ -1,5 +1,7 @@
 # Tema 03 – Semafor pentru pietoni pe ESP32-C3
 
+**Autor soluție: Darius Borca** — [Implementare și rulare](SOLUTIE.md)
+
 **Tehnologii:** ESP32-C3 Super Mini, Arduino IDE, FreeRTOS, MQTT, Java 17+ (dashboard)
 **Termen de predare:** _de stabilit_
 
@@ -217,7 +219,7 @@ mvn -q compile exec:java
 
 Pagina se deschide singură; altfel, deschideți `http://127.0.0.1:8080/`. Cele două dashboard-uri pot rula în același timp.
 
-Dashboard-ul web rulează și pe serverul cursului, fără să instalați nimic: [https://control.aut.utcluj.ro/semafor/](https://control.aut.utcluj.ro/semafor/). Pagina vă cere numele, identic cu `STUDENT` din `config.h`, și apoi arată doar plăcile voastre. Puteți păstra adresa cu numele inclus, de exemplu `https://control.aut.utcluj.ro/semafor/?student=popescu-ion`. `Dockerfile` și fișierele `compose*.yml` din folder sunt pentru acest server; pentru temă nu aveți nevoie de ele.
+Dashboard-ul web rulează și pe serverul cursului, fără să instalați nimic: [https://control.aut.utcluj.ro/semafor/](https://control.aut.utcluj.ro/semafor/). Pagina vă cere numele, identic cu `STUDENT` din `config.h`, și apoi arată doar plăcile voastre. Puteți păstra adresa cu numele inclus, de exemplu `https://control.aut.utcluj.ro/semafor/?student=borca-darius`. `Dockerfile` și fișierele `compose*.yml` din folder sunt pentru acest server; pentru temă nu aveți nevoie de ele.
 
 Pe lângă ce face dashboard-ul Swing, pagina web:
 
@@ -285,8 +287,8 @@ Detaliile din tema 02 rămân valabile:
 Înainte să scrieți cod, puteți fi voi „placa”: trimiteți mesaje `lights` dintr-un client MQTT și urmăriți cum reacționează dashboard-ul web. Așa vedeți exact ce așteaptă el și ce face cu fiecare câmp. Dashboard-ul nu verifică de unde vine mesajul: orice client care publică pe topic-ul `lights` al studentului vostru este, pentru el, o placă.
 
 1. Porniți dashboard-ul web (`start/dashboard-web/`, cu `STUDENT` setat) sau deschideți pagina de pe serverul cursului cu numele vostru.
-2. În **MQTTX** creați o conexiune la `control.aut.utcluj.ro`, portul `11188`, fără utilizator și parolă, și abonați-vă la `ssatr/popescu-ion/#` (cu numele vostru în loc de `popescu-ion`).
-3. Publicați, ca *Plaintext* și fără *Retain*, pe topic-ul `ssatr/popescu-ion/devices/manual/lights`:
+2. În **MQTTX** creați o conexiune la `control.aut.utcluj.ro`, portul `11188`, fără utilizator și parolă, și abonați-vă la `ssatr/borca-darius/#` (cu numele vostru în loc de `borca-darius`).
+3. Publicați, ca *Plaintext* și fără *Retain*, pe topic-ul `ssatr/borca-darius/devices/manual/lights`:
 
 ```
 manual;0;CAR_GREEN;GREEN;RED;0;0
@@ -295,7 +297,7 @@ manual;0;CAR_GREEN;GREEN;RED;0;0
 Dashboard-ul adaugă device-ul `manual` în lista **Device** (ID-ul este primul câmp din mesaj, nu numele din topic) și aprinde verde pentru mașini. Timestamp-ul nu este verificat, puteți lăsa `0`. După 2 s fără mesaje, lămpile se sting și pagina scrie „placa nu mai trimite mesaje”: placa reală publică la fiecare 500 ms. În MQTTX, porniți **Timed message** (în meniul de lângă butonul de trimitere) cu 1 s, ca mesajul să se repete singur; când vreți altă fază, schimbați textul și trimiteți din nou. Cu `mosquitto`, același lucru:
 
 ```bash
-while true; do mosquitto_pub -h control.aut.utcluj.ro -p 11188 -t 'ssatr/popescu-ion/devices/manual/lights' -m 'manual;0;CAR_GREEN;GREEN;RED;0;0'; sleep 1; done
+while true; do mosquitto_pub -h control.aut.utcluj.ro -p 11188 -t 'ssatr/borca-darius/devices/manual/lights' -m 'manual;0;CAR_GREEN;GREEN;RED;0;0'; sleep 1; done
 ```
 
 Un ciclu complet, mesaj cu mesaj:
@@ -317,7 +319,7 @@ Apoi greșiți intenționat, ca să vedeți verificările de siguranță:
 | `CAR_GREEN` cu `GREEN`, apoi direct `ALL_RED` cu `RED` | `mașini: GREEN → RED fără YELLOW`; mașinile prea aproape de linie nu mai pot opri: **mașini trecute pe roșu** |
 | `manual;0;CAR_GREEN;GREEN;RED;0` (șase câmpuri) | `mesaj lights invalid (are 6 câmpuri în loc de 7)`; lămpile rămân cum erau |
 
-În sens invers, dashboard-ul vă trimite vouă comanda: apăsați **Buton pietoni** (sau bifați **pietonii apasă singuri butonul**) și urmăriți în MQTTX mesajul `BUTTON` sosit pe `ssatr/popescu-ion/devices/manual/commands`. Pagina așteaptă apoi 5 s să vadă `asteptati` = `1` în `lights`. Răspundeți cu al doilea mesaj din primul tabel și pagina scrie „AȘTEPTAȚI aprinsă după … ms”; dacă nu răspundeți, scrie „AȘTEPTAȚI nu s-a aprins în 5 s”. Exact asta va face placa voastră: taskul sporadic înregistrează cererea, iar taskul de ieșire o publică la jobul următor.
+În sens invers, dashboard-ul vă trimite vouă comanda: apăsați **Buton pietoni** (sau bifați **pietonii apasă singuri butonul**) și urmăriți în MQTTX mesajul `BUTTON` sosit pe `ssatr/borca-darius/devices/manual/commands`. Pagina așteaptă apoi 5 s să vadă `asteptati` = `1` în `lights`. Răspundeți cu al doilea mesaj din primul tabel și pagina scrie „AȘTEPTAȚI aprinsă după … ms”; dacă nu răspundeți, scrie „AȘTEPTAȚI nu s-a aprins în 5 s”. Exact asta va face placa voastră: taskul sporadic înregistrează cererea, iar taskul de ieșire o publică la jobul următor.
 
 ## Cerințe
 

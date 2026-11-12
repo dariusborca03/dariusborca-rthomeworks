@@ -39,3 +39,7 @@ modules.order
 
 # Setări locale Docker Compose (porturi, fișierele alese pe server)
 .env
+
+# Executabilele testelor native
+/traffic_model_test.exe
+/device_model_test.exe
